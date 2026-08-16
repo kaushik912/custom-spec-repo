@@ -27,6 +27,24 @@ def get_quote(quote_id):
     return jsonify(quote)
 
 
+@app.post("/quotes/<int:quote_id>/like")
+def like_quote(quote_id):
+    quote = find_quote(quote_id)
+    if quote is None:
+        abort(404)
+    quote["likes"] += 1
+    return jsonify(quote)
+
+
+@app.post("/quotes/<int:quote_id>/unlike")
+def unlike_quote(quote_id):
+    quote = find_quote(quote_id)
+    if quote is None:
+        abort(404)
+    quote["likes"] = max(0, quote["likes"] - 1)
+    return jsonify(quote)
+
+
 @app.post("/quotes")
 def create_quote():
     global _next_id
