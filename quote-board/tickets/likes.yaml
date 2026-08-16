@@ -22,4 +22,3 @@ stack_notes: |
 testing_seam: single
 api_docs: false
 auto_approve: true
-auto_commit: false

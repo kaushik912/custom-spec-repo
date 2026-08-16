@@ -69,6 +69,8 @@ cd .claude/worktrees/likes/quote-board && ../../.venv/bin/pytest -q 2>/dev/null 
 
 ## 5. Review and merge back
 
+`ticket-spec` commits after every task automatically (no `auto_commit` toggle — it's unconditional, since it's just a local worktree branch), so both branches already carry real commits by the time a run reports done — no manual commit step needed here.
+
 ```bash
 cd /home/kaush/github_projs/custom-spec-repo
 git log --oneline master..worktree-likes
