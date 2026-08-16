@@ -1,0 +1,15 @@
+{
+  "mcpServers": {
+    "openapi-mcp": {
+      "type": "stdio",
+      "command": "uv",
+      "args": [
+        "--directory",
+        "/home/kaush/github_projs/custom-spec-repo/openapi-mcp",
+        "run",
+        "openapi-mcp"
+      ],
+      "env": {}
+    }
+  }
+}

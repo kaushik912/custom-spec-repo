@@ -16,7 +16,14 @@ def find_quote(quote_id):
 
 @app.get("/quotes")
 def list_quotes():
-    return jsonify(quotes)
+    author = request.args.get("author")
+    q = request.args.get("q")
+    result = quotes
+    if author is not None:
+        result = [quote for quote in result if quote["author"].lower() == author.lower()]
+    if q is not None:
+        result = [quote for quote in result if q.lower() in quote["text"].lower()]
+    return jsonify(result)
 
 
 @app.get("/quotes/<int:quote_id>")
