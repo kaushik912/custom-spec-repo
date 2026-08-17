@@ -1,6 +1,8 @@
 ---
 name: Documentation Updater
 description: Automatically reviews and updates documentation based on recent code changes
+engine: gemini
+model: gemini-3.6-flash
 on:
   schedule: daily
   workflow_dispatch:
