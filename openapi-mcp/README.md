@@ -29,7 +29,7 @@ uv run openapi-mcp
 ## Register with Claude Code
 
 ```
-claude mcp add openapi-mcp -- uv --directory /home/kaush/github_projs/custom-spec-repo/openapi-mcp run openapi-mcp
+claude mcp add openapi-mcp -- uv --directory /home/kaush/github_projs/spec-driven/custom-spec-repo/openapi-mcp run openapi-mcp
 ```
 
 Or add to `.mcp.json` / `claude_desktop_config.json`:
@@ -39,7 +39,7 @@ Or add to `.mcp.json` / `claude_desktop_config.json`:
   "mcpServers": {
     "openapi-mcp": {
       "command": "uv",
-      "args": ["--directory", "/home/kaush/github_projs/custom-spec-repo/openapi-mcp", "run", "openapi-mcp"]
+      "args": ["--directory", "/home/kaush/github_projs/spec-driven/custom-spec-repo/openapi-mcp", "run", "openapi-mcp"]
     }
   }
 }

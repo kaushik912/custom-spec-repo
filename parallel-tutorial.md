@@ -14,7 +14,7 @@ All steps below are manual — run them yourself.
 `EnterWorktree`/`claude -w` create the new worktree branch from `origin/<default-branch>` by default (not your local uncommitted files), so the scaffold has to be on the remote before you branch off it:
 
 ```bash
-cd /home/kaush/github_projs/custom-spec-repo
+cd /home/kaush/github_projs/spec-driven/custom-spec-repo
 git add quote-board parallel-tutorial.md
 git commit -m "Add quote-board dry-run app and tickets"
 git push
@@ -25,7 +25,7 @@ git push
 ## 2. Kick off ticket 1 — likes (Terminal A)
 
 ```bash
-cd /home/kaush/github_projs/custom-spec-repo
+cd /home/kaush/github_projs/spec-driven/custom-spec-repo
 claude -w likes
 ```
 
@@ -44,7 +44,7 @@ With `auto_approve: true` in the ticket, it should run spec -> plan -> tasks -> 
 Open a **second terminal**, same repo root:
 
 ```bash
-cd /home/kaush/github_projs/custom-spec-repo
+cd /home/kaush/github_projs/spec-driven/custom-spec-repo
 claude -w search-filter
 ```
 
@@ -72,7 +72,7 @@ cd .claude/worktrees/likes/quote-board && ../../.venv/bin/pytest -q 2>/dev/null 
 `ticket-spec` commits after every task automatically (no `auto_commit` toggle — it's unconditional, since it's just a local worktree branch), so both branches already carry real commits by the time a run reports done — no manual commit step needed here.
 
 ```bash
-cd /home/kaush/github_projs/custom-spec-repo
+cd /home/kaush/github_projs/spec-driven/custom-spec-repo
 git log --oneline master..worktree-likes
 git log --oneline master..worktree-search-filter
 git diff master worktree-likes -- quote-board/app.py
